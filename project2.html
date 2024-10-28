@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Font Control</title>
+    <style>
+        #custom-text {
+            padding: 10px;
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customize Paragraph Style</h1>
+    <p id="custom-text">The Chiefs will go undefeated!</p>
+
+    <!-- Border Color Controls -->
+    <h2>Border Customization</h2>
+    <label>Border R (0-255):</label>
+    <input type="number" id="border-r" min="0" max="255" value="0">
+    <label>Border G (0-255):</label>
+    <input type="number" id="border-g" min="0" max="255" value="0">
+    <label>Border B (0-255):</label>
+    <input type="number" id="border-b" min="0" max="255" value="0">
+    <label>Border Width (px):</label>
+    <input type="number" id="border-width" min="1" max="20" value="2">
+
+    <!-- Background Color Controls -->
+    <h2>Background Customization</h2>
+    <label>Background R (0-255):</label>
+    <input type="number" id="bg-r" min="0" max="255" value="0">
+    <label>Background G (0-255):</label>
+    <input type="number" id="bg-g" min="0" max="255" value="0">
+    <label>Background B (0-255):</label>
+    <input type="number" id="bg-b" min="0" max="255" value="0">
+
+    <button onclick="applyStyles()">Apply</button>
+
+    <script>
+        function applyStyles() {
+            // Get border color and width values
+            const borderR = document.getElementById("border-r").value;
+            const borderG = document.getElementById("border-g").value;
+            const borderB = document.getElementById("border-b").value;
+            const borderWidth = document.getElementById("border-width").value;
+
+            // Get background color values
+            const bgR = document.getElementById("bg-r").value;
+            const bgG = document.getElementById("bg-g").value;
+            const bgB = document.getElementById("bg-b").value;
+
+            // Apply styles to the text element
+            const customText = document.getElementById("custom-text");
+            customText.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+            customText.style.borderWidth = `${borderWidth}px`;
+            customText.style.borderStyle = 'solid';
+            customText.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+        }
+    </script>
+</body>
+</html>
